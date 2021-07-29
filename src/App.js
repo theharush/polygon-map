@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Tab from "react-bootstrap/Tab";
+import Nav from "react-bootstrap/Nav";
 
 import { CoordinatesForm } from "./components/CoordinatesForm";
 import { CoordinatesList } from "./components/CoordinatesList";
@@ -18,7 +20,26 @@ function App() {
         <Container>
             <Row>
                 <Col>
-                    <CoordinatesForm setPoints={setPoints} setCenter={setCenter} />
+                    <Tab.Container defaultActiveKey="coords">
+                        <Nav variant="tabs">
+                            <Nav.Item>
+                                <Nav.Link eventKey="coords">Weight Factors</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="search">Parameters</Nav.Link>
+                            </Nav.Item>
+                        </Nav>
+
+                        <Tab.Content>
+                            <Tab.Pane eventKey="coords">
+                                <CoordinatesForm setPoints={setPoints} setCenter={setCenter} />
+                            </Tab.Pane>
+                            <Tab.Pane eventKey="search">
+                                <div>Imp Search</div>
+                            </Tab.Pane>
+                        </Tab.Content>
+                    </Tab.Container>
+
                     <CoordinatesList points={points} setPoints={setPoints} />
                 </Col>
                 <Col>
