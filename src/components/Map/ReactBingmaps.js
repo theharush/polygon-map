@@ -579,8 +579,6 @@ var ReactBingmaps = (function (_Component) {
             key: "createRegularPolygons",
             value: function createRegularPolygons(regularPolygons, mapReference) {
                 if (map[mapReference] && regularPolygons) {
-                    console.log("asdasdasd");
-
                     for (var i = map[mapReference].entities.getLength() - 1; i >= 0; i--) {
                         var regularPolygon = map[mapReference].entities.get(i);
                         if (regularPolygon instanceof Microsoft.Maps.Polygon) {
@@ -596,7 +594,6 @@ var ReactBingmaps = (function (_Component) {
                             var option = regularPolygons[regularPolygonIndex].option
                                 ? regularPolygons[regularPolygonIndex].option
                                 : {};
-                            console.log("asdasdasd");
                             if (_.size(points) >= 3) {
                                 Microsoft.Maps.loadModule("Microsoft.Maps.SpatialMath", function () {
                                     const locations = _.map(points, (point) => new Microsoft.Maps.Location(point[0], point[1]));
