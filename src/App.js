@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import { CoordinatesForm } from "./components/CoordinatesForm";
-import { CorrdinatesList } from "./components/CorrdinatesList";
+import { CoordinatesList } from "./components/CoordinatesList";
 
 import { Map } from "./components/Map";
 
@@ -19,7 +19,7 @@ function App() {
             <Row>
                 <Col>
                     <CoordinatesForm setPoints={setPoints} setCenter={setCenter} />
-                    <CorrdinatesList points={points} />
+                    <CoordinatesList points={points} setPoints={setPoints} />
                 </Col>
                 <Col>
                     {" "}
